@@ -1,20 +1,47 @@
-@font-face {
-  font-family: 'aljazeera';
-  src: url('../fonts/aljazeera_light.ttf') format('truetype');
-  font-weight: 100;
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+.tajawal-extralight {
+  font-family: "tajawal", serif;
+  font-weight: 200;
+  font-style: normal;
 }
 
-@font-face {
-  font-family: 'aljazeera';
-  src: url('../fonts/aljazeera_regular.ttf') format('truetype');
+.tajawal-light {
+  font-family: "tajawal", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.tajawal-regular {
+  font-family: "tajawal", serif;
   font-weight: 400;
+  font-style: normal;
 }
 
-@font-face {
-  font-family: 'aljazeera';
-  src: url('../fonts/aljazeera_bold.ttf') format('truetype');
-  font-weight: 700;
+.tajawal-medium {
+  font-family: "tajawal", serif;
+  font-weight: 500;
+  font-style: normal;
 }
+
+.tajawal-bold {
+  font-family: "tajawal", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tajawal-extrabold {
+  font-family: "tajawal", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.tajawal-black {
+  font-family: "tajawal", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 *,
 *::before,
@@ -23,8 +50,8 @@
   padding: 0;
   margin: 0;
   user-select: none;
-  font-family: 'aljazeera', sans-serif;
-  font-weight: 400;
+  font-family: 'tajawal', sans-serif;
+  direction: rtl;
 }
 
 body {

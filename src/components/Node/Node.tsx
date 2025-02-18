@@ -6,7 +6,7 @@ export default function renderCustomNode(
 	props: CustomNodeElementProps,
 	handleClick: nodeClickHandler
 ): JSX.Element {
-	const { name, attributes } = props.nodeDatum;
+	const { name, attributes, children } = props.nodeDatum;
 
 	const width = 11.5 * Number(name.length);
 	const height = width / 3.5;
@@ -14,13 +14,16 @@ export default function renderCustomNode(
 	return (
 		<g
 			onClick={(e) =>
-				handleClick({
-					node: {
-						...props.nodeDatum,
-						attributes: attributes,
-					},
-					event: e,
-				})
+				attributes
+					? handleClick({
+							node: {
+								...props.nodeDatum,
+								attributes: attributes as any,
+								children: children as any,
+							},
+							event: e,
+					  })
+					: {}
 			}
 		>
 			<rect

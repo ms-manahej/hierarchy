@@ -1,7 +1,11 @@
-import { RawNodeDatum } from "react-d3-tree";
-
-export interface INodeProps extends RawNodeDatum {
-	attributes?: any;
+export interface INodeProps {
+	name: string;
+	attributes?: {
+		department: string;
+		directLead: string;
+		role: string;
+		qualifications: string[];
+	};
 	children?: INodeProps[];
 }
 

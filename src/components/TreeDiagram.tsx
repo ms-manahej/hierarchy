@@ -32,7 +32,7 @@ const TreeDiagram: React.FC<{
 		>
 			{dimensions.width > 0 && (
 				<Tree
-					data={mainData}
+					data={mainData as any}
 					orientation="vertical"
 					translate={{
 						x: dimensions.width / 2,
