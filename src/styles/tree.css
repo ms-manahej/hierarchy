@@ -1,0 +1,37 @@
+.rd3t-svg {
+  background-color: #f9f6fe;
+}
+
+.rd3t-node {
+  cursor: pointer !important;
+  fill: #9d61eb !important;
+  stroke: #340e5d !important;
+  stroke-width: 2 !important;
+}
+
+.rd3t-label {
+  fill: #383838 !important;
+  stroke: none !important;
+  font-size: 1.2rem !important;
+}
+
+.rd3t-leaf-node {
+  cursor: pointer !important;
+  fill: #d3b9f9 !important;
+  stroke: #340e5d !important;
+  stroke-width: 1 !important;
+}
+
+/* 'honey-flower': {
+  '50': '#f9f6fe',
+  '100': '#f1eafd',
+  '200': '#e6d8fc',
+  '300': '#d3b9f9',
+  '400': '#b88df3',
+  '500': '#9d61eb',
+  '600': '#8541dc',
+  '700': '#712fc1',
+  '800': '#612b9e',
+  '900': '#522583',
+  '950': '#340e5d',
+}, */

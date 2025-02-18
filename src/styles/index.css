@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'aljazeera';
+  src: url('../fonts/aljazeera_light.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'aljazeera';
+  src: url('../fonts/aljazeera_regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'aljazeera';
+  src: url('../fonts/aljazeera_bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  font-family: 'aljazeera', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  overflow: hidden;
+}
