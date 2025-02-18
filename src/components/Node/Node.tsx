@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { CustomNodeElementProps } from "react-d3-tree";
-import { INodeProps, nodeClickHandler } from ".";
+import { nodeClickHandler } from ".";
 
 export default function renderCustomNode(
 	props: CustomNodeElementProps,
