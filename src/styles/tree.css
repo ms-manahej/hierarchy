@@ -13,6 +13,12 @@
   fill: #383838 !important;
   stroke: none !important;
   font-size: 1.2rem !important;
+  font-weight: 500;
+}
+
+.rd3t-node .rd3t-label {
+  fill: #fff !important;
+
 }
 
 .rd3t-leaf-node {

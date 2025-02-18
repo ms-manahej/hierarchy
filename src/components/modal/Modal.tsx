@@ -1,13 +1,16 @@
 import React from "react";
-import { IModalInfo } from ".";
+import { displayTypes, GetDisplayType, IModalInfo } from ".";
 import "./modal.css";
+import { sectionTitles } from "./content";
+import { INodeAttributes } from "../Node";
 
 const Modal: React.FC<IModalInfo> = ({ isOpen, onClose, node }) => {
 	if (!isOpen) return null;
 
 	const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
+	const totalIndices = Object.keys(node.attributes).length - 1;
 
-	return (
+	return node.attributes && !node.attributes.disableModal ? (
 		<div className="modal-backdrop" onClick={onClose}>
 			<div className="modal-content" onClick={stopPropagation}>
 				<div className="modal-header">
@@ -15,27 +18,47 @@ const Modal: React.FC<IModalInfo> = ({ isOpen, onClose, node }) => {
 				</div>
 
 				<div className="modal-body">
-					<section className="modal-section">
-						<h3>القائد المباشر</h3>
-						<p>{node.attributes?.directLead}</p>
-					</section>
-					<hr />
-					<section className="modal-section">
-						<h3>شروطه</h3>
-						<ul className="modal-list">
-							{node.attributes?.qualifications.map((q: string, i: number) => (
-								<li key={i}>{q}</li>
-							))}
-						</ul>
-					</section>
-					<hr />
-					<section className="modal-section">
-						<h3>دوره</h3>
-						<p>{node.attributes?.role}</p>
-					</section>
+					{Object.keys(node.attributes).map((key, index: number) => {
+						const attKey = key as unknown as keyof INodeAttributes;
+						const displayType = GetDisplayType[attKey];
+
+						switch (displayType) {
+							case displayTypes.text:
+								return node.attributes?.[attKey] ? (
+									<>
+										<section className="modal-section">
+											<h3>{sectionTitles[attKey]}</h3>
+											<p>{node.attributes?.[attKey]}</p>
+										</section>
+										{index !== totalIndices && <hr />}
+									</>
+								) : (
+									<></>
+								);
+							case displayTypes.list:
+								return node.attributes?.[attKey] ? (
+									<>
+										<section className="modal-section">
+											<h3>{sectionTitles[attKey]}</h3>
+											<ul className="modal-list">
+												{(node.attributes[attKey] as Array<string>).map(
+													(q: string, i: number) => (
+														<li key={i}>{q}</li>
+													)
+												)}
+											</ul>
+										</section>
+										{index !== totalIndices && <hr />}
+									</>
+								) : (
+									<></>
+								);
+							default:
+								return <></>;
+						}
+					})}
 				</div>
 
-				{/* Footer with a Close Button */}
 				<div className="modal-footer">
 					<button type="button" className="close-btn" onClick={onClose}>
 						إغلاق
@@ -43,6 +66,8 @@ const Modal: React.FC<IModalInfo> = ({ isOpen, onClose, node }) => {
 				</div>
 			</div>
 		</div>
+	) : (
+		<></>
 	);
 };
 

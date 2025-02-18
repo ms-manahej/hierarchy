@@ -8,7 +8,10 @@ export default function renderCustomNode(
 ): JSX.Element {
 	const { name, attributes, children } = props.nodeDatum;
 
-	const width = 11.5 * Number(name.length);
+	const size = attributes?.size
+		? Number(attributes?.size)
+		: Number(name.length);
+	const width = 12 * size;
 	const height = width / 3.5;
 
 	return (
