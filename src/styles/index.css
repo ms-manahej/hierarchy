@@ -52,6 +52,7 @@
   user-select: none;
   font-family: 'tajawal', sans-serif;
   direction: rtl;
+  text-wrap-style: pretty;
 }
 
 body {

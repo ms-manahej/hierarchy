@@ -21,13 +21,11 @@
   background-color: #fff;
   width: 90%;
   max-width: 700px;
-  /* or any max width you like */
   max-height: 80vh;
   border-radius: 8px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
@@ -36,11 +34,15 @@
   padding: 1rem;
   border-bottom: 1px solid #ccc;
   text-align: center;
+  color: #fff;
+  background-color: #8c52ff;
+  border-radius: 7px 7px 0 0;
 }
 
 .modal-body {
   padding: 2rem;
   flex: 1;
+  overflow-y: auto;
 }
 
 .modal-section:not(:first-child) {
@@ -61,6 +63,8 @@
 
 /* Footer area (close button) */
 .modal-footer {
+  display: flex;
+  justify-content: center;
   padding: 1rem;
   border-top: 1px solid #ccc;
   text-align: right;
@@ -69,12 +73,13 @@
 /* Close button style */
 .close-btn {
   padding: 0.5rem 1rem;
+  width: 40%;
   border: none;
   background-color: #8c52ff;
-  /* Purple shade, for example */
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 /* Close button hover effect */
