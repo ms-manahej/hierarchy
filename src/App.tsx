@@ -9,6 +9,7 @@ function App() {
 		isOpen: false,
 		node: {
 			name: "",
+			attributes: {},
 		},
 	});
 
@@ -25,7 +26,9 @@ function App() {
 			<TreeDiagram handleNodeClick={handleNodeClick} />
 			<Modal
 				isOpen={modal.isOpen}
-				onClose={() => setModal({ isOpen: false, node: { name: "" } })}
+				onClose={() =>
+					setModal({ isOpen: false, node: { name: "", attributes: {} } })
+				}
 				node={modal.node}
 			/>
 		</>
